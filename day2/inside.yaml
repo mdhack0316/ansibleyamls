@@ -1,0 +1,22 @@
+---
+- name: using inside variable to configure apache
+  hosts: localhost
+  gather_facts: false
+  vars: 
+   package_name: httpd 
+   output: Hello From inside container 
+   path: /var/www/html/index.html
+  tasks: 
+  - name: installing package 
+    yum: 
+     name: "{{ padfckage_name }}"
+     state: present
+  - name: creating index file
+    copy: 
+     dest: "{{ path }}"
+     content: "{{ output }}"
+
+  - name: start the service
+    service: 
+     name: "{{ package_name }}"
+     state: started 

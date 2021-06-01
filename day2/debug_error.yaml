@@ -1,0 +1,32 @@
+---
+- name: using inside variable to configure apache
+  hosts: localhost
+  ignore_errors: yes
+  vars_files: 
+  - vars.yaml
+  gather_facts: false
+  tasks: 
+  - name: installing package 
+    yum: 
+     name: "{{ pkg_name }}"
+     state: present
+    register: yum_output
+
+  - name: checking stord variable output
+    debug: 
+     var: yum_output
+
+  - name: showing you the msg 
+    debug: 
+     msg: Installation is Successful
+    when: yum_output.failed == false 
+
+  - name: creating index file
+    copy: 
+     dest: "{{ place }}"
+     content: "{{ show }}"
+
+  - name: start the service
+    service: 
+     name: "{{ svc_name }}"
+     state: started 

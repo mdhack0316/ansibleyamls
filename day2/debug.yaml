@@ -1,0 +1,7 @@
+---
+- name: using debug
+  hosts: localhost
+  tasks: 
+  - name: printing custom msg 
+    debug: 
+     msg: "I Am Running Ansible Training"

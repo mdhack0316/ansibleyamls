@@ -1,0 +1,22 @@
+---
+- name: using inside variable to configure apache
+  hosts: localhost
+  ignore_errors: yes
+  vars_files: 
+  - vars.yaml
+  gather_facts: false
+  tasks: 
+  - name: installing package 
+    yum: 
+     name: "{{ pkg_name }}"
+     state: present
+
+  - name: creating index file
+    copy: 
+     dest: "{{ place }}"
+     content: "{{ show }}"
+
+  - name: start the service
+    service: 
+     name: "{{ svc_name }}"
+     state: started 

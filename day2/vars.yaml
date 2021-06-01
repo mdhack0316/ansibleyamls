@@ -1,0 +1,4 @@
+pkg_name: httpddc
+svc_name:  httpd
+show:   Hello From outside variable 
+place:   /var/www/html/index.html

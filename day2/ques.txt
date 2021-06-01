@@ -1,0 +1,12 @@
+1. install a pakcge -    you need to display a msg -- if my installation is successfull --  providfe a msg 
+> 
+>    installation is successful 
+> 
+>  if my installaation is failed then u to provide a msg  "" installation is failed
+> 
+> 
+> 2.  if my service is started the print a msg service start successfullty
+>  if that fails   service failed to start 
+> 
+> 
+> 3.  if both fails then u have to provide a msg "playbook was unsuccessful ^
