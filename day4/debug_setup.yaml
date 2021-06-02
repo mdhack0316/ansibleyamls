@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  #gather_facts: false 
+  tasks: 
+  - name: using debug modukle
+    debug: 
+     msg: "{{ ansible_hostname }}"
+
+  - name: using debug modukle
+    debug: 
+     msg: "{{ ansible_memtotal_mb  }}"
