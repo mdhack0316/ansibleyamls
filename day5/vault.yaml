@@ -1,0 +1,7 @@
+---
+- hosts: localhost
+  vars_files: 
+  - create_vault.yaml
+  tasks: 
+  - debug: 
+      msg: "{{ print }}"

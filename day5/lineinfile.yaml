@@ -1,0 +1,15 @@
+---
+- hosts: localhost
+  tasks: 
+  - copy: 
+     content: "First LIne"
+     dest: /root/testing.txt 
+
+  - lineinfile: 
+     path: /root/testing.txt 
+     line: Second LIne
+
+  - replace:
+     regexp: Second 
+     replace: Third
+     path: /root/testing.txt

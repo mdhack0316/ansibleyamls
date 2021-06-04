@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  tasks: 
+  - blockinfile: 
+     path: /root/block.txt 
+     create: yes
+     block: |
+              HI MAyank modi
+              Secondline 
+              New ansible Blockinfile
+              MOdule
